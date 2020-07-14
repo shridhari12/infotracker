@@ -1,0 +1,7 @@
+C:\InfoTrackerProject\InfoTrackerRepository\bin\Debug\netcoreapp3.1\InfoTrackerRepository.deps.json
+C:\InfoTrackerProject\InfoTrackerRepository\bin\Debug\netcoreapp3.1\InfoTrackerRepository.dll
+C:\InfoTrackerProject\InfoTrackerRepository\bin\Debug\netcoreapp3.1\InfoTrackerRepository.pdb
+C:\InfoTrackerProject\InfoTrackerRepository\obj\Debug\netcoreapp3.1\InfoTrackerRepository.AssemblyInfoInputs.cache
+C:\InfoTrackerProject\InfoTrackerRepository\obj\Debug\netcoreapp3.1\InfoTrackerRepository.AssemblyInfo.cs
+C:\InfoTrackerProject\InfoTrackerRepository\obj\Debug\netcoreapp3.1\InfoTrackerRepository.dll
+C:\InfoTrackerProject\InfoTrackerRepository\obj\Debug\netcoreapp3.1\InfoTrackerRepository.pdb

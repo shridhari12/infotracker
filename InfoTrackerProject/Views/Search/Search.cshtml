@@ -1,0 +1,22 @@
+﻿@model InfoTrackerProject.Models.InfoTrackerSearchResultModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Google Search</h1>
+
+<p>
+    @Html.ActionLink(
+        linkText: "Back to Search", 
+        actionName: "Index", 
+        controllerName: "Search", 
+        routeValues: null, 
+        htmlAttributes: new { @class = "btn btn-success btn-sm glyphicon glyphicon-remove" }
+    )
+
+</p>
+<div class="col-12">
+    <p>@Html.DisplayNameFor(model => model.SearchUrl)</p>
+    <strong>Your search has returned results at positions @Model.SearchResult</strong>
+</div>

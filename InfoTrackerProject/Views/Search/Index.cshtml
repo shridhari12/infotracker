@@ -1,0 +1,40 @@
+﻿@model InfoTrackerProject.Models.InfoTrackerSearch
+
+@{
+    ViewData["Title"] = "Info Tracker";
+}
+
+<h1>Info Tracker</h1>
+
+<h4>This page provides the functionality to perform a google search for a keyword and returns the results</h4>
+<h3>Please click on the below button to search for Info Tracker ranking in Google</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Search">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="SearchUrl" class="control-label"></label>
+                <input asp-for="SearchUrl" class="form-control" />
+                <span asp-validation-for="SearchUrl" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    @*@Html.ActionLink(
+        linkText: "Search InfoTracker",
+        actionName: "Search",
+        controllerName: "Search",
+        routeValues: null,
+        htmlAttributes: new { @class = "btn btn-success btn-sm glyphicon glyphicon-remove" })*@
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
