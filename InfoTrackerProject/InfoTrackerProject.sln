@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.txt = README.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTrackerData", "..\InfoTrackerData\InfoTrackerData.csproj", "{29B52603-753E-4AB5-82AB-A9DC1C66BE3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{AC37556A-DFFB-48E5-A1CC-D48086BC26B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC37556A-DFFB-48E5-A1CC-D48086BC26B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC37556A-DFFB-48E5-A1CC-D48086BC26B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29B52603-753E-4AB5-82AB-A9DC1C66BE3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B52603-753E-4AB5-82AB-A9DC1C66BE3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B52603-753E-4AB5-82AB-A9DC1C66BE3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B52603-753E-4AB5-82AB-A9DC1C66BE3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

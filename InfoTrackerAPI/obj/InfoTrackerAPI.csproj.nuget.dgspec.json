@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\InfoTrackerProject\\InfoTrackerAPI\\InfoTrackerAPI.csproj": {}
+    "C:\\infotracker\\InfoTrackerAPI\\InfoTrackerAPI.csproj": {}
   },
   "projects": {
-    "C:\\InfoTrackerProject\\InfoTrackerAPI\\InfoTrackerAPI.csproj": {
+    "C:\\infotracker\\InfoTrackerAPI\\InfoTrackerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\InfoTrackerProject\\InfoTrackerAPI\\InfoTrackerAPI.csproj",
+        "projectUniqueName": "C:\\infotracker\\InfoTrackerAPI\\InfoTrackerAPI.csproj",
         "projectName": "InfoTrackerAPI",
-        "projectPath": "C:\\InfoTrackerProject\\InfoTrackerAPI\\InfoTrackerAPI.csproj",
+        "projectPath": "C:\\infotracker\\InfoTrackerAPI\\InfoTrackerAPI.csproj",
         "packagesPath": "C:\\Users\\shrid\\.nuget\\packages\\",
-        "outputPath": "C:\\InfoTrackerProject\\InfoTrackerAPI\\obj\\",
+        "outputPath": "C:\\infotracker\\InfoTrackerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\shrid\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,7 +26,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\infotracker\\InfoTrackerData\\InfoTrackerData.csproj": {
+                "projectPath": "C:\\infotracker\\InfoTrackerData\\InfoTrackerData.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -61,6 +65,58 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\infotracker\\InfoTrackerData\\InfoTrackerData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\infotracker\\InfoTrackerData\\InfoTrackerData.csproj",
+        "projectName": "InfoTrackerData",
+        "projectPath": "C:\\infotracker\\InfoTrackerData\\InfoTrackerData.csproj",
+        "packagesPath": "C:\\Users\\shrid\\.nuget\\packages\\",
+        "outputPath": "C:\\infotracker\\InfoTrackerData\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\shrid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

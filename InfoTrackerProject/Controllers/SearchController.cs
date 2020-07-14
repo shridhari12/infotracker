@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using InfoTrackerAPI.Repositories;
+﻿using InfoTrackerAPI.Repositories;
 using InfoTrackerProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -35,12 +33,12 @@ namespace InfoTrackerProject.Controllers
                 throw new Exception("Search input not provided");
             }
 
-            var searchUrl = infoTrackerSearch?.SearchUrl?.Trim() ?? null;
+            var searchUrl = infoTrackerSearch?.SearchProvider ?? null;
 
-            var searchResult = await _infoTrackerRepository.GetSearchResultsFromGoogle(searchUrl);
+            var searchResult = await _infoTrackerRepository.GetSearchResultsFromGoogle(searchUrl.ToString());
             var viewModel = new InfoTrackerSearchResultModel
             {
-                SearchUrl = searchUrl,
+                SearchUrl = searchUrl.ToString(),
                 SearchResult = searchResult
             };
 

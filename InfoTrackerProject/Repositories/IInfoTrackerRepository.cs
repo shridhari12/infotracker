@@ -4,6 +4,6 @@ namespace InfoTrackerAPI.Repositories
 {
     public interface IInfoTrackerRepository
     {
-        Task<string> GetSearchResultsFromGoogle(string url);
+        Task<string> GetSearchResultsFromGoogle(string infoProvider);
     }
 }

@@ -5,13 +5,13 @@ namespace InfoTrackerAPI.Repositories
 {
     public class InfoTrackerRepository : IInfoTrackerRepository
     {
-        public readonly string getSearchResultFromApiUrl = "https://localhost:44369/api/infotracker/googleresult/sdsdf"; //50001
-        public async Task<string> GetSearchResultsFromGoogle(string url)
+        public async Task<string> GetSearchResultsFromGoogle(string infoProvider)
         {
             HttpResponseMessage response = null;
             using (var httpClient = new HttpClient())
             {
-                response = await httpClient.GetAsync(getSearchResultFromApiUrl);
+                string searchApiUrl = string.Join("", "https://localhost:44369/api/infotracker/googleresult/", infoProvider);
+                response = await httpClient.GetAsync(searchApiUrl);
             }
             var result = await response.Content.ReadAsStringAsync();
             return result;

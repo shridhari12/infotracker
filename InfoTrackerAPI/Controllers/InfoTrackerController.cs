@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AngleSharp.Html.Dom;
+using AngleSharp.Html.Parser;
+using InfoTrackerData.Enums;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,12 +11,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using AngleSharp.Html.Dom;
-using AngleSharp.Html.Parser;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace InfoTrackerAPI.Controllers
 {
@@ -26,11 +24,23 @@ namespace InfoTrackerAPI.Controllers
         };
 
         [HttpGet]
-        [Route("googleresult/{url}")]
-        public async Task<string> GetGoogleResult(string url)
+        [Route("googleresult/{provider}")]
+        public async Task<string> GetGoogleResult(string provider)
         {
+            string searchUri = string.Empty;
             var googleUri = "https://www.google.com/search?q=online+title+search";
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(googleUri);
+            var bingUri = "https://www.bing.com/search?q=online+title+search";
+            InfoProvider searchProvider;
+            Enum.TryParse<InfoProvider>(provider, out searchProvider);
+            if (searchProvider == InfoProvider.Bing)
+            {
+                searchUri = bingUri;
+            }
+            if (searchProvider == InfoProvider.Google)
+            {
+                searchUri = googleUri;
+            }
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(searchUri);
             request.Referer = "https://www.localhost:44337";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream responseStream = response.GetResponseStream();
@@ -42,22 +52,22 @@ namespace InfoTrackerAPI.Controllers
             //{
             //    JObject jObject = JObject.Parse(responseReader.ReadToEnd());
             //}
-            string tempString = null;
-            int count = 0;
-            do
-            {
-                count = responseStream.Read(ResultsBuffer, 0, ResultsBuffer.Length);
-                if (count != 0)
-                {
-                    tempString = Encoding.ASCII.GetString(ResultsBuffer, 0, count);
-                    sb.Append(tempString);
-                }
-            }
+            //string tempString = null;
+            //int count = 0;
+            //do
+            //{
+            //    count = responseStream.Read(ResultsBuffer, 0, ResultsBuffer.Length);
+            //    if (count != 0)
+            //    {
+            //        tempString = Encoding.ASCII.GetString(ResultsBuffer, 0, count);
+            //        sb.Append(tempString);
+            //    }
+            //}
 
-            while (count > 0);
-            string sbb = sb.ToString();
+            //while (count > 0);
+            //string sbb = sb.ToString();
 
-            var result = await GetDocs(googleUri);
+            var result = await GetDocs(searchUri);
             return result;
         }
 

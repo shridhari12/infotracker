@@ -1,4 +1,6 @@
-﻿@model InfoTrackerProject.Models.InfoTrackerSearch
+﻿@using InfoTrackerData.Enums;
+@model InfoTrackerProject.Models.InfoTrackerSearch
+
 
 @{
     ViewData["Title"] = "Info Tracker";
@@ -18,6 +20,10 @@
                 <input asp-for="SearchUrl" class="form-control" />
                 <span asp-validation-for="SearchUrl" class="text-danger"></span>
             </div>*@
+            <div class="form-group">
+                <label asp-for="SearchProvider" class="control-label"></label>
+                <select asp-for="SearchProvider" asp-items="Html.GetEnumSelectList<InfoProvider>()"></select>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
